@@ -5,81 +5,58 @@ li {list-style: none;}
 a {text-decoration: none;}
 address, small {font-style: normal; font-size: 1em;}
 .hidden {position: absolute; left: -9999px;}
-/*
-    반응형은 무조건 너비는 100%로 한다.
-    대신 각 요소의 넓이는 가변적
-*/
-/* 웹 폰트 - notosans ko */
+/* 웹 폰트 - notosans kr */
 body {font-family: "notosans kr", sans-serif;}
-/* 헤더 */
+/* header */
 #header {
-    text-transform: capitalize;
-    background: linear-gradient(180deg, #8d0000 0%, #7e0000 100%);
-    /* 어차피 상단이기 때문에 굳이 안해줘도 된다. */
-    /* position: relative; */
-    border-bottom: 1px solid #000;
+    text-transform: uppercase; background: #000; color: #fff;
+    height: 50px;
 }
-#header a {color: #fff;}
-#header h1 {text-align: center; padding: 5px 0; font-size: 24px;}
-#header > a {
-    text-indent: -9999px;
-    position: absolute; top: 5px;
-    background: url(../images/sprites.png) no-repeat;
+#header h1 {margin-left: 10px; line-height: 50px;}
+/* toggle button */
+#header a {
+    position: absolute; top: 10px; right: 10px;
+    text-indent: -9999px; border-radius: 100%;
+    width: 30px; height: 30px; background: #fff;
 }
-#header .btn {left: 5px; width: 62px; height: 32px;}
-#header .toggle {
-    right: 5px; width: 32px; height: 32px;
-    background-position-x: right;
-}
+#header a:hover {background: #f700ad;}
 /* toggle gnb */
-#toggleGnb {background: #808080; padding: 20px;}
-#toggleGnb ul {background: #fff; overflow: hidden;}
-#toggleGnb ul li {float: left; width: 80px; height: 30px;}
-#toggleGnb ul li a {color: #333;}
-/* top, bottom : li 와 a 영역 동일하게 처리하자 */
-/* top gnb */
-#topGnb {background: linear-gradient(180deg, #8d0000 0%, #7e0000 100%);}
-#topGnb ul {overflow: hidden;}
+#toggleGnb {text-align: center; padding: 10px; background: #800000;}
+#toggleGnb ul {overflow: hidden; background: #000;}
+#toggleGnb ul li {
+    float: left; width: 100px; height: 40px;
+    margin: 0 10px 10px;
+}
+/* a 태그에 display: block;을 적용시켜 li 태그의 width 값을 상속 */
+#toggleGnb ul li a {
+    display: block;
+    height: 40px; line-height: 40px;
+    margin: 0 auto;
+    border-bottom: 1px solid #fff; color: #fff;
+}
+#toggleGnb a:hover {color: #f700ad; border-color: #f700ad;}
+/* topGnb */
+#topGnb {text-align: center; height: 40px;}
+/* width를 %로 넣어서 현재 화면에 표시되는 너비의 n%가 되도록한다. */
 #topGnb ul li {
-    float: left; width: 25%; height: 35px; text-align: center;
-    border-bottom: 2px solid #000;
+    float: left; width: 25%; height: 40px;
+    background: #282828;
 }
-#topGnb ul li a {display: block; height: 35px; line-height: 35px; color: #fff;}
-#topGnb ul li a:hover {background-color: #7efec8;}
-/* bottom gnb */
-#bottomGnb {}
-#bottomGnb ul {}
-#bottomGnb ul li {
-    float: left; width: 20%; height: 34px; text-align: center;
-    border-bottom: 1px solid #000;
-}
-#bottomGnb ul li a {
-    display: block; height: 34px; line-height: 35px; color: #000;
+#topGnb ul li a {
+    display: block; height: 40px; line-height: 40px; color: #fff;
     position: relative;
 }
-#bottomGnb ul li a:hover {background: lightblue;}
-#bottomGnb ul li a::after {
-    content: ""; position: absolute; top: 10px; left: -1px;
-    height: 15px; border-right: 1px solid #000;
+#topGnb a:hover {background: #800000;}
+#topGnb a::after {
+    content: ""; height: 20px; position: absolute; top: 10px; left: -1px;
+    border-left: 1px solid #fff;
 }
-/*
-    아래처럼 해도 되지만 그냥 단순히 안보이게 하려면 right 혹은 left에다가
-    1px을 움직여서 숨겨줘도 된다.
-    ** 여기서는 left로 해주자. (아래에 스크롤바가 생긴다)
-*/
-/* #bottomGnb ul li:last-child a::after {border-right: 0;} */
-/* 본문 */
-#content {}
-#contentHeader {clear: both; padding: 25px 15px;}
-#contentHeader h2 {}
-#contentHeader time {}
-#content p {margin: 0 7px 10px;}
-/* 푸터 */
+/* main */
+#contentHeader {padding: 25px 15px;}
+#content p {margin: 0 10px 10px;}
+/* footer */
 #footer {
-    border-top: 3px solid #000;
-    padding: 24px 0 20px; margin-top: 14px;
-    text-align: center;
-    font-family: "Time New Roman", serif;
+    border-top: 3px solid #000; 
+    padding: 20px 0 0; text-align: center;
 }
 #footer address {font-weight: bold;}
-#footer small {font-style: italic;}
