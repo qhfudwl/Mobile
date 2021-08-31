@@ -5,6 +5,14 @@
         <title>모바일</title>
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/common.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--
+        jquery.com
+        -> download
+        -> 끝에 release notes click
+        -> download 두 개 링크 중 아무거나 하나 복사
+        -> index.html 에다가 넣기 (한거 보자)
+    -->
     </head>
     <body>
         <header id="header">
@@ -25,6 +33,20 @@
                 <li><a href="#">버튼</a></li>
             </ul>
         </nav>
+        <script>
+            // $는 jquery라는 의미
+            // . 은 연결
+            // hide 는 메소드이기 때문에 뒤에 ()
+            $("#toggleGnb").hide();
+            // on()안에 '' "" 둘다 가능
+            // 함수를 실행할거다
+            $(".toggle").on('click', function(){
+                // show()는 보여주다
+                // slideToggle() 스르륵 열리게
+                // toggle()은 on-off 반복
+                $("#toggleGnb").slideToggle();
+            })
+        </script>
         <nav id="topGnb">
             <h2 class="hidden">두번째 메뉴</h2>
             <ul>
